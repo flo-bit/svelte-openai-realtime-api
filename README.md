@@ -6,6 +6,8 @@ it allows you to easily use the openai realtime api in your sveltekit project.
 
 work in progress, but it should be functional.
 
+demo here (enter your own api key, as always be careful with stuff like that and e.g. use a 2 $ limited api key): https://flo-bit.dev/svelte-openai-realtime-api/
+
 ## how to use
 
 > [!WARNING]
