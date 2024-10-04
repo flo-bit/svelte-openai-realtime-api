@@ -8,6 +8,8 @@ work in progress, but it should be functional.
 
 demo here (enter your own api key, as always be careful with stuff like that and e.g. use a 2 $ limited api key): https://flo-bit.dev/svelte-openai-realtime-api/
 
+https://github.com/user-attachments/assets/c1e96dac-98b5-4e16-95e8-9cbc6e60865d
+
 ## how to use
 
 > [!WARNING]
