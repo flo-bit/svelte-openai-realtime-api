@@ -1,5 +1,5 @@
 {
-	"name": "visualization",
+	"name": "svelte-openai-realtime-api",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
