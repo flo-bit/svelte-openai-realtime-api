@@ -1,12 +1,12 @@
 # sveltekit openai realtime api
 
-this is a sveltekit port of the [openai-realtime-console](https://github.com/openai/openai-realtime-console) repository.
+this is a svelte component for using the openai realtime api (and mostly a direct port to svelte of the [openai-realtime-console](https://github.com/openai/openai-realtime-console) repository).
 
-it allows you to easily use the openai realtime api in your sveltekit project.
+it allows you to easily use the openai realtime api in your svelte(kit) project.
 
 work in progress, but it should be functional.
 
-demo here (enter your own api key, as always be careful with stuff like that and e.g. use a 2 $ limited api key): https://flo-bit.dev/svelte-openai-realtime-api/
+demo here (enter your own api key, as always be careful with stuff like that and e.g. use a 2$ limited api key): https://flo-bit.dev/svelte-openai-realtime-api/
 
 https://github.com/user-attachments/assets/c1e96dac-98b5-4e16-95e8-9cbc6e60865d
 
