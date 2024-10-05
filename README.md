@@ -14,7 +14,9 @@ chat with visualizations: https://flo-bit.dev/svelte-openai-realtime-api/visuali
 
 visualizations only: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-input
 
-https://github.com/user-attachments/assets/c1e96dac-98b5-4e16-95e8-9cbc6e60865d
+
+https://github.com/user-attachments/assets/81473395-5811-475d-81ac-13c0e7811eff
+
 
 ## how to use
 
