@@ -119,11 +119,29 @@ $ node relay-server/index.js
 
 ## todos
 
+- [x] show waveforms
 - [ ] add tests
+- [ ] update main demo ui
 - [ ] add more documentation
-- [ ] show waveforms
+    - [ ] simple setup client side, server side
+    - [ ] all props
 - [ ] tool calling
-- [ ] update ui
+- [ ] events
+    - onConnect
+    - onDisconnect
+    - onError
+    - onInterrupt
+    - onRealtimeEvent
+    - onConversationUpdate
+    - speechStart
+    - speechStop
+- [ ] error handling
+- [ ] pause/resume recording
+- [ ] send text message
+- [ ] update props
+	- instructions
+	- voice
+	- vad settings
 
 ## license
 

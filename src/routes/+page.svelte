@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Realtime from '$lib/realtime/realtime.svelte';
+	import Realtime from '$lib/realtime/Realtime.svelte';
 	import Switch from '$lib/ui/Switch.svelte';
 	import Layout from '$lib/ui/Layout.svelte';
 	import type { ItemType } from '@openai/realtime-api-beta/dist/lib/client';

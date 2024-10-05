@@ -38,6 +38,7 @@
 	"dependencies": {
 		"@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
 		"@sveltejs/adapter-static": "^3.0.5",
+		"@tailwindcss/forms": "^0.5.9",
 		"dotenv": "^16.4.5"
 	},
 	"license": "MIT"
