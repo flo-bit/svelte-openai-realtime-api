@@ -6,11 +6,8 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	export let turnDetection: 'server_vad' | 'none' = 'server_vad';
-
 	export let apiKey: string = '';
-
 	export let useRelayServer: boolean = false;
-
 	export let relayServer: string = '';
 
 	export let instructions: string = 'You are a great, upbeat friend. Speak fast.';
@@ -27,9 +24,9 @@
 		event: { [key: string]: any };
 	}
 
-	let client: RealtimeClient;
-	let wavRecorder: WavRecorder = new WavRecorder({ sampleRate: 24000 });
-	let wavStreamPlayer: WavStreamPlayer = new WavStreamPlayer({ sampleRate: 24000 });
+	export let client: RealtimeClient | undefined = undefined;
+	export let wavRecorder: WavRecorder = new WavRecorder({ sampleRate: 24000 });
+	export let wavStreamPlayer: WavStreamPlayer = new WavStreamPlayer({ sampleRate: 24000 });
 
 	let startTime = '';
 
@@ -76,11 +73,11 @@
 			const trackSampleOffset = await wavStreamPlayer.interrupt();
 			if (trackSampleOffset?.trackId) {
 				const { trackId, offset } = trackSampleOffset;
-				await client.cancelResponse(trackId, offset);
+				await client?.cancelResponse(trackId, offset);
 			}
 		});
 		client.on('conversation.updated', async ({ item, delta }: any) => {
-			const newItems = client.conversation.getItems();
+			const newItems = client?.conversation.getItems();
 			if (delta?.audio) {
 				wavStreamPlayer.add16BitPCM(delta.audio, item.id);
 			}
@@ -89,7 +86,7 @@
 				item.formatted.file = wavFile;
 			}
 
-			items = newItems;
+			if (newItems) items = newItems;
 		});
 	}
 
@@ -111,11 +108,11 @@
 		await wavStreamPlayer.connect();
 
 		// Connect to realtime API
-		await client.connect();
+		await client?.connect();
 
 		if (sendHello) {
 			console.log('sending user message');
-			client.sendUserMessageContent([
+			client?.sendUserMessageContent([
 				{
 					type: `input_text`,
 					text: `Hello!`
@@ -124,8 +121,8 @@
 			]);
 		}
 
-		if (client.getTurnDetectionType() === 'server_vad') {
-			await wavRecorder.record((data) => client.appendInputAudio(data.mono));
+		if (client?.getTurnDetectionType() === 'server_vad') {
+			await wavRecorder.record((data) => client?.appendInputAudio(data.mono));
 		}
 	}
 
@@ -134,7 +131,7 @@
 		realtimeEvents = [];
 		items = [];
 
-		client.disconnect();
+		client?.disconnect();
 
 		await wavRecorder.end();
 
@@ -156,9 +153,9 @@
 		const trackSampleOffset = await wavStreamPlayer.interrupt();
 		if (trackSampleOffset?.trackId) {
 			const { trackId, offset } = trackSampleOffset;
-			await client.cancelResponse(trackId, offset);
+			await client?.cancelResponse(trackId, offset);
 		}
-		await wavRecorder.record((data) => client.appendInputAudio(data.mono));
+		await wavRecorder.record((data) => client?.appendInputAudio(data.mono));
 	}
 
 	/**
@@ -173,7 +170,7 @@
 		isRecording = false;
 
 		await wavRecorder.pause();
-		client.createResponse();
+		client?.createResponse();
 	};
 
 	$: if (turnDetection && client) {
@@ -185,11 +182,11 @@
 		if (value === 'none' && wavRecorder.getStatus() === 'recording') {
 			await wavRecorder.pause();
 		}
-		client.updateSession({
+		client?.updateSession({
 			turn_detection: value === 'none' ? null : { type: 'server_vad' }
 		});
-		if (value === 'server_vad' && client.isConnected()) {
-			await wavRecorder.record((data) => client.appendInputAudio(data.mono));
+		if (value === 'server_vad' && client?.isConnected()) {
+			await wavRecorder.record((data) => client?.appendInputAudio(data.mono));
 		}
 
 		canPushToTalk = value === 'none';
