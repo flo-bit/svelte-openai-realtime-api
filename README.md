@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/67d94a6c-ee44-4834-a9dd-a628b4a4e093
 $ npm i openai/openai-realtime-api-beta
 ```
 
-2. import the `Realtime` component into your svelte file and use it e.g. like so:
+3. import the `Realtime` component into your svelte file and use it e.g. like so:
 
 ```svelte
 <script lang="ts">
