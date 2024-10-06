@@ -6,9 +6,17 @@ it allows you to easily use the openai realtime api in your svelte(kit) project.
 
 work in progress, but it should be functional.
 
-demo here (enter your own api key, as always be careful with stuff like that and e.g. use a 2$ limited api key): https://flo-bit.dev/svelte-openai-realtime-api/
+demos here (enter your own api key, as always be careful with stuff like that and e.g. use a 2$ limited api key): 
 
-https://github.com/user-attachments/assets/c1e96dac-98b5-4e16-95e8-9cbc6e60865d
+basic chat: https://flo-bit.dev/svelte-openai-realtime-api/
+
+chat with visualizations: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-chat
+
+visualizations only: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-input
+
+
+https://github.com/user-attachments/assets/81473395-5811-475d-81ac-13c0e7811eff
+
 
 ## how to use
 
@@ -64,6 +72,10 @@ $ npm i openai/openai-realtime-api-beta
 ```
 
 see `src/routes/+page.svelte` for a full example.
+
+## visualization
+
+see `src/routes/visulizations-chat/+page.svelte` for an example of how to visualize the audio input and output.
 
 ## relay server
 

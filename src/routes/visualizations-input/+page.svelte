@@ -21,8 +21,9 @@
 
 			recording = true;
 		}}
-		class="rounded-full px-5 py-3 text-base font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 text-amber-500 bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500/20 {recording ? 'cursor-not-allowed opacity-50' : ''}"
-		>start microphone</button
+		class="rounded-full px-5 py-3 text-base font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 text-amber-500 bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500/20 {recording
+			? 'cursor-not-allowed opacity-50'
+			: ''}">start microphone</button
 	>
 
 	<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
@@ -39,7 +40,7 @@
 			<DeformedCircleVisualizer wavInput={wavRecorder} startHue={0} endHue={50} />
 		</div>
 		<div class="h-64 w-full rounded-xl border border-white/15 overflow-hidden">
-			<InnerGlowVisualizer wavInput={wavRecorder} startHue={0} endHue={50}/>
+			<InnerGlowVisualizer wavInput={wavRecorder} startHue={0} endHue={50} />
 		</div>
 	</div>
 </div>
