@@ -3,6 +3,7 @@
 	import CircleBarVisualizer from '$lib/realtime/visualizations/CircleBarVisualizer.svelte';
 	import CircleCirclesVisualizer from '$lib/realtime/visualizations/CircleCirclesVisualizer.svelte';
 	import DeformedCircleVisualizer from '$lib/realtime/visualizations/DeformedCircleVisualizer.svelte';
+	import IconVisualizer from '$lib/realtime/visualizations/IconVisualizer.svelte';
 	import InnerGlowVisualizer from '$lib/realtime/visualizations/InnerGlowVisualizer.svelte';
 	import { WavRecorder } from '$lib/realtime/wavtools';
 
@@ -41,6 +42,16 @@
 		</div>
 		<div class="h-64 w-full rounded-xl border border-white/15 overflow-hidden">
 			<InnerGlowVisualizer wavInput={wavRecorder} startHue={0} endHue={50} />
+		</div>
+		<div
+			class="h-64 w-full rounded-xl border border-white/15 overflow-hidden flex items-center justify-center gap-4"
+		>
+			<div class="size-12">
+				<IconVisualizer wavInput={wavRecorder} />
+			</div>
+			<div class="size-12">
+				<IconVisualizer wavInput={wavRecorder} icon="speaker" />
+			</div>
 		</div>
 	</div>
 </div>

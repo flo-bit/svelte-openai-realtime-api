@@ -131,11 +131,15 @@
 		realtimeEvents = [];
 		items = [];
 
-		client?.disconnect();
+		try {
+			client?.disconnect();
 
-		await wavRecorder.end();
+			await wavRecorder.end();
 
-		await wavStreamPlayer.interrupt();
+			await wavStreamPlayer.interrupt();
+		} catch (e) {
+			console.warn(e);
+		}
 	}
 
 	/**

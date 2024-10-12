@@ -12,8 +12,6 @@ basic chat: https://flo-bit.dev/svelte-openai-realtime-api/
 
 chat with visualizations: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-chat
 
-visualizations only: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-input
-
 
 https://github.com/user-attachments/assets/67d94a6c-ee44-4834-a9dd-a628b4a4e093
 
@@ -36,7 +34,7 @@ $ npm i openai/openai-realtime-api-beta
 
 ```svelte
 <script lang="ts">
-	import Realtime from '$lib/realtime/realtime.svelte';
+	import Realtime from '$lib/realtime/Realtime.svelte';
 	import type { ItemType } from '@openai/realtime-api-beta/dist/lib/client';
 
 	let startConversation: () => Promise<void>;
@@ -75,7 +73,9 @@ see `src/routes/+page.svelte` for a full example.
 
 ## visualization
 
-see `src/routes/visulizations-chat/+page.svelte` for an example of how to visualize the audio input and output.
+see `src/routes/visulizations-chat/+page.svelte` for an example of how to visualize the audio input and output. and `src/routes/visulizations-input/+page.svelte` for all currently available visualizations.
+
+demo here: https://flo-bit.dev/svelte-openai-realtime-api/visualizations-input
 
 ## relay server
 
@@ -92,6 +92,10 @@ for production use, you will need to use a relay server to use the realtime api.
 then you have two options:
 
 ### run the relay server with your sveltekit server
+
+> [!WARNING]
+> this currently only works in development mode, if you want to use this in production you will need to run the relay server independently.
+> if you have any ideas on how to make this work in production, please let me know.
 
 change your `vite.config.ts` to this:
 
